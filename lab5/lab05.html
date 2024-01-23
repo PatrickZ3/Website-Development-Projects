@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="styling5.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+<script src="lab5.js"></script>
+<title>Lab05</title>
+</head>
+    <body>
+        <div class="head">
+            <header>    
+                <h1>Alien Potato Head</h1>
+            </header>
+        </div>
+        <div id="everything">>
+            <div id="selector-container">
+                <div id ="buttons">
+                    <div class ="inside" id="hat-selector">
+                        <img id="hat" src="hat.png">
+                    </div>
+                    <div class ="inside" id="eyes-selector">
+                        <img id="eyes" src="Eyes.png">
+                    </div>
+                    <div class ="inside" id="nose-selector">
+                        <img id="nose" src="nose.png">
+                    </div>
+                    <div class ="inside" id="mouth-selector">
+                        <img id="mouth" src="Mouth.png">
+                    </div>
+                </div>
+            </div>
+            <div id="potato">
+                <img src="potatoBase.png" width="400">
+            </div>
+        </div>
+        <button id="save-button" onclick="screenshot()">Save Creation</button>
+        <div id="container">
+            
+        </div>
+        <button id="zoom" onclick="shrinkImage()">shrink</button>
+        <div id="zooming">
+            <div id="full" onmouseenter="fullscreen()">
+                <img id="ousama" src="ousama.jpg" >
+            </div>
+        </div>
+    </body>
+    
+
+</html>

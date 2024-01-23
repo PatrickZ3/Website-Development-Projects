@@ -1,0 +1,96 @@
+* {box-sizing:border-box;}
+
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+[class*="col-"] {float:left; padding:15px;}
+
+.row::after {content:""; clear:both; display:table;}
+
+.Header{
+    width: 50%;
+    font-family: 'Arial';
+    font-size: 3vw; 
+    float:left; 
+    padding:15px;
+}
+
+img {
+    width:100%;
+
+    
+}
+
+figure{
+    margin:0px;
+}
+
+.image{
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    padding-top:0%;
+    padding-left: 0%;
+    padding-right: 0%;
+    border: 0%;
+}
+
+.caption{
+    font-family: 'Calibri';
+    margin-top: 0px;
+    margin-bottom: 0px;
+    float:left; 
+    padding:15px;
+    width: 100%;
+}
+.style{
+    font-family: 'Calibri';
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+h1{
+    font-size: 3.5vw;
+    margin-bottom: 0px;
+}
+
+h2{
+    font-size: 2vw;
+}
+
+h3{
+    margin:0
+}
+
+footer{
+    margin-top: 5%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .col-4{width: 100%}
+}
+
+@media(max-width:767px){
+    .col-4{width: 100%}
+    .Header{
+        width: 100%;
+        font-family: 'Arial';
+        font-size: 5vw; 
+        float:left; 
+        padding:0%;
+        margin: 0%;
+    }
+   
+}
+

@@ -1,0 +1,110 @@
+<html>
+    <body>
+        <style>
+            #output{
+                font-family:"Georgia";
+                color:blue;
+            }
+        </style>
+        <script>
+            function isNumeric(elem){
+                var numericExpression = /^[0-9]+$/;
+                if(elem.value.match(numericExpression)){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+            function isNumFormat(elem){
+                var format = /^\(\d{3}\)\d{3}-\d{4}$/;
+                if(elem.value.match(format)){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+            function validate(){
+                var n = document.getElementById('name');
+                var p = document.getElementById('phone');
+                var address = document.getElementById('address');
+                var outputDiv = document.getElementById('output');
+                if(isNumeric(n)){
+                    outputDiv.innerHTML = "Name can only have letters";
+                }else{
+                    if(isNumFormat(p)){
+                        outputDiv.innerHTML = "Form is valid.<br>Name: " + n.value + ", address: "+ address.value+", Phone: " + p.value;
+                    }else{
+                        outputDiv.innerHTML = "Phone Number format must be: (XXX)XXX-XXXX";
+                    }
+                }
+            } 
+            function countTotalCharacters(){
+                const textArea = document.getElementById('story');
+                const charCount = document.getElementById('charCount');
+
+                textArea.addEventListener('input', function(){
+                    charCount.textContent = textArea.value.length;
+                });
+            } 
+            function countLetters(){
+                const textArea = document.getElementById('story');
+                const letterCount = document.getElementById('letterCount');
+
+                textArea.addEventListener('input', function(){
+                    const text = textArea.value;
+                    const letter = /[A-Za-z]/g;
+                    const letters = text.match(letter) || [];
+                    letterCount.textContent = letters.length;
+                });
+            }
+            document.addEventListener('DOMContentLoaded', function(){
+                countTotalCharacters();
+                countLetters(); 
+                createBookmarkList();
+            })
+            function createBookmarkList(){
+                const bookmarks = [
+                    {url: 'https://www.youtube.com', secure: true},
+                    {url: 'http://www.washington.edu', secure: false}
+                ];
+
+                const bookmarksDiv = document.getElementById('bookmarks');
+
+                bookmarks.forEach((bookmark) => {
+                    const bookmarkItem = document.createElement('div');
+                    const icon = document.createElement('img');
+                    icon.width = 15;
+                    icon.height = 15;
+                    icon.alt = bookmark.secure ? 'lock-screen' : 'unlock';
+                    icon.src = bookmark.secure
+                    ? 'https://img.icons8.com/fluency-systems-filled/96/12B886/lock-screen.png'
+                    : 'https://img.icons8.com/fluency-systems-filled/96/FA5252/unlock.png';
+                    
+                    const link = document.createElement('a');
+                    link.href = bookmark.url;
+                    link.textContent = bookmark.url;
+                    
+                    const lineBreak = document.createElement('br');
+
+                    bookmarkItem.appendChild(icon);
+                    bookmarkItem.appendChild(link);
+                    bookmarkItem.appendChild(lineBreak);
+                    bookmarksDiv.appendChild(bookmarkItem);
+                }); 
+            }
+            
+        </script>
+        <p>Name <input type="text" id="name"></p>
+        <p>Home Address <input type="text" id="address"></p>
+        <p>Phone Number <input type="text" id="phone"></p>
+        <p><input type="button" onclick="validate()" value="Validate Name And Phone Number"></p>
+        <h1 id="output"></h1>
+        <p><label for="story">Tell us your story</label></p>
+        <p><textarea id="story" name="story" rows="5" cols="33"></textarea></p>
+        <h1>Character count: <span id="charCount">0</span></h1>
+        <h1>Letter count: <span id="letterCount">0</span></h1>
+        <br>
+        <div>Bookmarks: <span id="bookmarks"></span></div>
+        
+    </body>
+</html>

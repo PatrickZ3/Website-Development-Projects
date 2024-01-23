@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="lab07b.css">
+        <title>Lab 07b</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">Registration</div>
+            <form action="https://www2.cs.ryerson.ca/~pslay/cgi-bin/lab07b.cgi" method="post" enctype="multipart/form-data">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">First Name</span>
+                        <input type="text" name="firstName" placeholder="Enter your First Name" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Last Name</span>
+                        <input type="text" name="lastName" placeholder="Enter your Last Name" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Street</span>
+                        <input type="text" name="Street" placeholder="Enter your Street" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">City</span>
+                        <input type="text" name="City" placeholder="Enter your City" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Province</span>
+                        <select name="prov">
+                            <option>Alberta</option>
+                            <option>British Columbia</option>
+                            <option>Manitoba</option>
+                            <option>Newfoundland and Labrador</option>
+                            <option>New Brunswick</option>
+                            <option>Nova Scotia</option>
+                            <option>Ontario</option>
+                            <option>Prince Edward Island</option>
+                            <option>Saskatchewan</option>
+                            <option>Quebec</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Postal Code</span>
+                        <input type="text" name="postalCode" placeholder="L0L 0L0" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Phone Number</span>
+                        <input type="text" name="phoneNumber"placeholder="XXX XXX XXXX" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Email</span>
+                        <input type="text" name="email"placeholder="Enter your Email" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Photograph</span>
+                        <input type="file" name="photoFile" required>
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Send">
+                </div>
+                
+            </form>
+            
+        </div>
+    </body>
+</html>
